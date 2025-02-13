@@ -1,23 +1,67 @@
-﻿namespace Y10_Challenge_Kaprikars_Constant
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Kaprecars_constants
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //Kaprekar's Constant is 6174
-            //1. take a 4 digit start number using at least two different digits...e.g. 9218
-            //2. order the digits descending 4321, then ascending to get two 4 digit numbers (add leading zeros if needed)
-            //3. subtract smaller number from bigger number e.g. 9821-1289=8532
-            //4. Go back to step 2 replacing start number with result of step 3, repeat until numbers converge to 6174
+            Console.WriteLine("Hello, Type a four digit number:"); 
+            string x = Console.ReadLine();
+            while (x != "6174")
+            {
+                Console.WriteLine($"Number =  {x}");
+                string ascending = BubbleSort(x);
+                string descending = "";
+                for (int i = 0; i < 4; i++)
+                {
+                    descending = descending + ascending[3 - i];
+                }
+                x = Convert.ToString(Convert.ToInt32(descending) - Convert.ToInt32(ascending));
+                Console.WriteLine($"Descending = {descending}");
+                Console.WriteLine($"Ascending = {ascending}");
+                Console.WriteLine("");
+            }
+            Console.WriteLine(x);
+            
+                
+            
+        }
 
-            //Task: Write a program to compute Kaprekar's constant using any four digit start number
-            //Ext: Display the number of iterations needed until 6174 is reached
-
-            Console.WriteLine("Hello, Type a four digit number:"); //starter code for students
-            int x = Convert.ToInt32(Console.ReadLine()); //starter for students
-            //YOUR CODE GOES HERE....
-
-
+        static string BubbleSort(string str)
+        {
+            char[] myArray = new char[str.Length];
+            for (int i = 0; i < 4; i++)
+            {
+                myArray[i] = Convert.ToChar(str[i]);
+            }
+            int length = myArray.Length;
+            bool Sorted = false;
+            char temp = ' ';
+            while (Sorted != true)
+            {
+                Sorted = true;
+                for (int i = 0; i < length - 1; i++)
+                {
+                    if (myArray[i] > myArray[i + 1])
+                    {
+                        Sorted = false;
+                        temp = myArray[i];
+                        myArray[i] = myArray[i + 1];
+                        myArray[i + 1] = temp;
+                    }
+                }
+            }
+            str = "";
+            for (int i = 0; i < 4; i++)
+            {
+                str = str + myArray[i];
+            }
+            return str;
         }
     }
 }

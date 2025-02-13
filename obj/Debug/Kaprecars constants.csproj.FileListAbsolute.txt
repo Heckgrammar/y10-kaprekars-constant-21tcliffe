@@ -1,0 +1,7 @@
+U:\Visual Studio 2024\Kaprecars constants\bin\Debug\Kaprecars constants.exe.config
+U:\Visual Studio 2024\Kaprecars constants\bin\Debug\Kaprecars constants.exe
+U:\Visual Studio 2024\Kaprecars constants\bin\Debug\Kaprecars constants.pdb
+U:\Visual Studio 2024\Kaprecars constants\obj\Debug\Kaprecars constants.csproj.AssemblyReference.cache
+U:\Visual Studio 2024\Kaprecars constants\obj\Debug\Kaprecars constants.csproj.CoreCompileInputs.cache
+U:\Visual Studio 2024\Kaprecars constants\obj\Debug\Kaprecars constants.exe
+U:\Visual Studio 2024\Kaprecars constants\obj\Debug\Kaprecars constants.pdb
